@@ -15,3 +15,10 @@ script:
       cd LSS\ CLI/bin/release
       7z.exe a -tzip ../../../LSS\ CLI.$TRAVIS_TAG.zip lssc.exe* *dll
     fi
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key: $GITHUB_KEY
+  file: LSS CLI.$TRAVIS_TAG.zip
+  on:
+    tags: true
