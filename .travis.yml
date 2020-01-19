@@ -8,7 +8,11 @@ install:
 script:
   - export PATH="$MSBUILD_PATH:$PATH"
   - MSBuild.exe //p:Configuration=Release LSSCLI.sln
-# Build only in the master branch
-branches:
-  only:
-  - master
+  - "if [ $TRAVIS_TAG ]; then zip -j LSS\\ CLI.$TRAVIS_TAG.zip LSS\\ CLI/bin/Release/lssc.exe* LSS\\ CLI/bin/Release/*.dll; fi"
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key: $GITHUB_KEY
+  file: LSS CLI.$TRAVIS_TAG.zip
+    on:
+      tags: true
