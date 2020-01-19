@@ -1,18 +1,17 @@
 language: bash
 os: windows
 env:
-  - MSBUILD_PATH="C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\MSBuild\15.0\Bin"
+  - >
+    MSBUILD_PATH="C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\MSBuild\15.0\Bin"
+    SEVENZIP_PATH="C:\Program Files\7-Zip"
 install:
   - choco install nuget.commandline
   - nuget restore LSSCLI.sln
 script:
-  - export PATH="$MSBUILD_PATH:$PATH"
+  - export PATH="$MSBUILD_PATH:$SEVENZIP_PATH:$PATH"
   - MSBuild.exe //p:Configuration=Release LSSCLI.sln
-  - "if [ $TRAVIS_TAG ]; then zip -j LSS\\ CLI.$TRAVIS_TAG.zip LSS\\ CLI/bin/Release/lssc.exe* LSS\\ CLI/bin/Release/*.dll; fi"
-deploy:
-  provider: releases
-  skip_cleanup: true
-  api_key: $GITHUB_KEY
-  file: LSS CLI.$TRAVIS_TAG.zip
-  on:
-    tags: true
+  - |-
+    if [ $TRAVIS_TAG ]; then
+      cd LSS\ CLI/bin/release
+      7z.exe a -tzip ../../../LSS\ CLI.$TRAVIS_TAG.zip lssc.exe* *dll
+    fi
