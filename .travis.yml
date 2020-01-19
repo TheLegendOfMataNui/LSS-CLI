@@ -14,5 +14,5 @@ deploy:
   skip_cleanup: true
   api_key: $GITHUB_KEY
   file: LSS CLI.$TRAVIS_TAG.zip
-    on:
-      tags: true
+  on:
+    tags: true
