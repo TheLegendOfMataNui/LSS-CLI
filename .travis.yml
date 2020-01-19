@@ -12,8 +12,9 @@ script:
   - MSBuild.exe //p:Configuration=Release LSSCLI.sln
   - |-
     if [ $TRAVIS_TAG ]; then
-      cd LSS\ CLI/bin/release
+      pushd LSS\ CLI/bin/release
       7z.exe a -tzip ../../../LSS\ CLI.$TRAVIS_TAG.zip lssc.exe* *dll
+      popd
     fi
 deploy:
   provider: releases
