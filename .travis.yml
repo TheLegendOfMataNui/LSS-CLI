@@ -13,13 +13,13 @@ script:
   - |-
     if [ $TRAVIS_TAG ]; then
       pushd LSS\ CLI/bin/release
-      7z.exe a -tzip ../../../LSS\ CLI.$TRAVIS_TAG.zip lssc.exe* *dll
+      7z.exe a -tzip ../../../LSS_CLI.$TRAVIS_TAG.zip lssc.exe* *dll
       popd
     fi
 deploy:
   provider: releases
   skip_cleanup: true
   api_key: $GITHUB_KEY
-  file: LSS CLI.$TRAVIS_TAG.zip
+  file: LSS_CLI.$TRAVIS_TAG.zip
   on:
     tags: true
