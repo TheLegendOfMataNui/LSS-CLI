@@ -6,10 +6,10 @@ env:
     SEVENZIP_PATH="C:\Program Files\7-Zip"
 install:
   - choco install nuget.commandline
-  - nuget restore LSSCLI.sln
+  - nuget restore LSS\ CLI.sln
 script:
   - export PATH="$MSBUILD_PATH:$SEVENZIP_PATH:$PATH"
-  - MSBuild.exe //p:Configuration=Release LSSCLI.sln
+  - MSBuild.exe //p:Configuration=Release LSS\ CLI.sln
   - |-
     if [ $TRAVIS_TAG ]; then
       pushd LSS\ CLI/bin/release
