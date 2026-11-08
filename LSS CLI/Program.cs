@@ -96,7 +96,7 @@ namespace LSS_CLI
                 }
             }
 
-            Compiler.Result result = Compiler.CompileFiles(inputs);
+            Compiler.Result result = Compiler.CompileFiles(inputs, settings);
             messages.AddRange(result.Messages);
 
             int errorCount = 0;
