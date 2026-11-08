@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.156
@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.travis.yml = .travis.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LSS CLI", "LSS CLI\LSS CLI.csproj", "{0AA5F7B1-E492-4A40-B735-6B27A150E747}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LSS CLI", "LSS CLI\LSS CLI.csproj", "{0AA5F7B1-E492-4A40-B735-6B27A150E747}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
