@@ -12,14 +12,12 @@
     <FileVersion>1.1.2</FileVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="CommandLineParser" Version="2.5.0" />
+    <PackageReference Include="CommandLineParser" Version="2.9.1" />
     <PackageReference Include="Equ" Version="2.2.0" />
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="NUtils" Version="1.1.1" />
-    <PackageReference Include="SAGESharp" Version="1.1.2" />
+    <PackageReference Include="NUtils" Version="1.2.0" />
+    <PackageReference Include="SAGESharp" Version="1.2.1" />
     <PackageReference Include="SharpDX" Version="4.2.0" />
     <PackageReference Include="SharpDX.Mathematics" Version="4.2.0" />
-    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
     <PackageReference Include="YamlDotNet" Version="8.0.0" />
   </ItemGroup>
 </Project>
